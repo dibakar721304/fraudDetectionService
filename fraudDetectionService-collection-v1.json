@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Fraud Detection API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api/v1/fraud" },
+    { "key": "transactionId", "value": "sample-txn-id" },
+    { "key": "accountId", "value": "sample-account-id" }
+  ],
+  "item": [
+    {
+      "name": "Analyze Transaction",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/analyze", "host": ["{{baseUrl}}"], "path": ["analyze"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountId\": \"{{accountId}}\",\n  \"amount\": 100.0,\n  \"currency\": \"USD\",\n  \"timestamp\": \"2024-01-01T12:00:00Z\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Transaction by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/transactions/{{transactionId}}", "host": ["{{baseUrl}}"], "path": ["transactions", "{{transactionId}}"] }
+      }
+    },
+    {
+      "name": "Get Account Transactions",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/accounts/{{accountId}}/transactions", "host": ["{{baseUrl}}"], "path": ["accounts", "{{accountId}}", "transactions"] }
+      }
+    },
+    {
+      "name": "Get All Flagged Transactions",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/flagged", "host": ["{{baseUrl}}"], "path": ["flagged"] }
+      }
+    },
+    {
+      "name": "Get Pending Reviews",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/review/pending", "host": ["{{baseUrl}}"], "path": ["review", "pending"] }
+      }
+    },
+    {
+      "name": "Submit Manual Review",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/review/{{transactionId}}", "host": ["{{baseUrl}}"], "path": ["review", "{{transactionId}}"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"outcome\": \"LEGITIMATE\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Dashboard Stats",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/dashboard/stats", "host": ["{{baseUrl}}"], "path": ["dashboard", "stats"] }
+      }
+    },
+    {
+      "name": "Get Transaction Audit Logs",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/audit/transaction/{{transactionId}}", "host": ["{{baseUrl}}"], "path": ["audit", "transaction", "{{transactionId}}"] }
+      }
+    },
+    {
+      "name": "Get Account Audit Logs",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/audit/account/{{accountId}}", "host": ["{{baseUrl}}"], "path": ["audit", "account", "{{accountId}}"] }
+      }
+    }
+  ]
+}
