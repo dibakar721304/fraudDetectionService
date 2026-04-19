@@ -34,9 +34,10 @@ This service provides real-time fraud detection for financial transactions using
 
 | Requirement | Version |
 |-----------|---------|
-| Java | 21+ |
-| Maven | 3.6+ |
-| Spring Boot | 3.0+ |
+| Java | 21+     |
+| Maven | 3.6+    |
+| Spring Boot | 3.0+    |
+
 
 ## Installation
 
@@ -244,9 +245,6 @@ mvn clean verify
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 
@@ -255,4 +253,4 @@ For issues, questions, or suggestions, please create an issue in the [GitHub rep
 ---
 
 **Last Updated**: 2026-04-19
-**Status**: Production Ready
+
