@@ -38,6 +38,7 @@ This service provides real-time fraud detection for financial transactions using
 | Maven | 3.6+    |
 | Spring Boot | 3.0+    |
 
+
 ## Installation
 
 ### Clone the Repository
@@ -252,3 +253,4 @@ For issues, questions, or suggestions, please create an issue in the [GitHub rep
 ---
 
 **Last Updated**: 2026-04-19
+
